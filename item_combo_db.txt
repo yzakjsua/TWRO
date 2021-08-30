@@ -1,0 +1,21 @@
+490030:4875,{ bonus bAtk,50; }
+490030:4877,{ bonus bDelayRate,-8; }
+490030:4878,{ bonus bMaxHpRate,15; }
+490030:4876,{ bonus bMatk,50; }
+490030:4879,{ bonus bLongAtkRate,10; }
+490030:4880,{ bonus bCritAtkRate,10; }
+490030:22202,{ bonus bMaxHPrate,15; bonus bMaxSPrate,5; }
+490097:22202,{ bonus bMdef,5; if(readparam(bStr)>=120) bonus2 bAddClass,Class_All,8; bonus2 bAddSize,Size_All,8; if(readparam(bAgi)>=120) bonus bAspdRate,4; bonus bCritAtkRate,15; if(readparam(bVit)>=120) bonus bMaxHPrate,8; bonus bDelayRate,-8; if(readparam(bInt)>=120) bonus bMatkRate,8; bonus2 bMagicAtkEle,Ele_All,8; if(readparam(bDex)>=120) bonus bLongAtkRate,5; bonus2 bAddClass,Class_All,8; if(readparam(bLuk)>=120) bonus bCritAtkRate,10; bonus bAspd,1; }
+490097:480076,{ bonus bMdef,5; .@r = getequiprefinerycnt(EQI_GARMENT); if (.@r >= 9 ) bonus2 bIgnoreDefRaceRate,RC_All,5+(.@r>=12?10:0); bonus2 bIgnoreMdefRaceRate,RC_All,5+(.@r>=12?10:0); bonus2 bIgnoreDefRaceRate,RC_Player_Human,-5-(.@r>=12?10:0); bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-5-(.@r>=12?10:0); bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-5-(.@r>=12?10:0); bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-5-(.@r>=12?10:0); }
+450175:480076,{ .@sum = getequiprefinerycnt(EQI_ARMOR)+getequiprefinerycnt(EQI_GARMENT); if(.@sum>=22) bonus2 bAddSize,Size_All,10; bonus2 bMagicAddSize,Size_All,10; bonus bCritAtkRate,10; }
+450175:22202,{ bonus bAtk,80; bonus bMatk,80; .@sum = getequiprefinerycnt(EQI_ARMOR)+getequiprefinerycnt(EQI_SHOES); if(.@sum>=22) bonus2 bIgnoreDefRaceRate,RC_Brute,20; bonus2 bIgnoreDefRaceRate,RC_Demon,20; bonus2 bIgnoreMDefRaceRate,RC_Brute,20; bonus2 bIgnoreMDefRaceRate,RC_Brute,20; }
+450175:480076:22202,{ .@sum = getequiprefinerycnt(EQI_ARMOR)+getequiprefinerycnt(EQI_GARMENT)+getequiprefinerycnt(EQI_SHOES); if(.@sum>=27) bonus bDelayRate,-5-(.@sum>=37?8:0); }
+480076:490030:4875,{ bonus bAtk,25; }
+480076:490030:4877,{ bonus bDelayRate,-4; }
+480076:490030:4878,{ bonus bMaxHPrate,7; }
+480076:490030:4876,{ bonus bMatk,25; }
+480076:490030:4879,{ bonus bLongAtkRate,5; }
+480076:490030:4880,{ bonus bCritAtkRate,5; }
+480076:22202,{ bonus bMdef,5; .@sum = getequiprefinerycnt(EQI_GARMENT)+getequiprefinerycnt(EQI_SHOES); if(.@sum>=22) { if(readparam(bStr)>=108) bonus bAtk,50; if(readparam(bAgi)>=108) bonus bAspd,1; if(readparam(bVit)>=108) bonus bDelayRate,-5; if(readparam(bInt)>=108) bonus bMatk,50; if(readparam(bDex)>=108) bonus bLongAtkRate,7; if(readparam(bLuk)>=108) bonus bCritAtkRate,7; } }
+20717:22202,{ bonus bMaxHPrate,15; bonus bMaxSPrate,5; .@r = getequiprefinerycnt(EQI_SHOES); if (.@r>=10) bonus bAllStats,2; if(readparam(bStr)>=108) bonus bAtk,50; if(readparam(bAgi)>=108) bonus bAspd,1; if(readparam(bVit)>=108) bonus bMaxHPrate,8; if(readparam(bInt)>=108) bonus bMatk,60; if(readparam(bDex)>=108) bonus bLongAtkRate,5; bonus bFixedCast,-500; if(readparam(bLuk)>=108) bonus bCritAtkRate,30; }
+20718:22202,{ bonus bMaxHPrate,15; bonus bMaxSPrate,5; .@r = getequiprefinerycnt(EQI_SHOES); if (.@r>=10) bonus bAllStats,2; if(readparam(bStr)>=108) bonus bAtk,50; if(readparam(bAgi)>=108) bonus bAspd,1; if(readparam(bVit)>=108) bonus bMaxHPrate,8; if(readparam(bInt)>=108) bonus bMatk,60; if(readparam(bDex)>=108) bonus bLongAtkRate,5; bonus bFixedCast,-500; if(readparam(bLuk)>=108) bonus bCritAtkRate,30; }

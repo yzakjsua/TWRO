@@ -1,0 +1,177 @@
+  - Id: 22202
+    AegisName: Aegis_22202
+    Name: 時光超越者之靴
+    Type: Armor
+    Buy: 20
+    Weight: 600
+    Defense: 25
+    Classes:
+      All: true
+    Slots: 1
+    Locations:
+      Shoes: true
+    EquipLevelMin: 100
+    Refineable: true
+    Script:
+      .@r = getrefine();
+      if (.@r>=10) {
+         bonus bAllStats,2;
+      }
+      bonus bMdef,15;
+      if (readparam(bStr)>=108)
+         bonus bBaseAtk,50;
+      if (readparam(bAgi)>=108)
+         bonus bAspd,1;
+      if (readparam(bVit)>=108)
+         bonus bMaxHPrate,8;
+      if (readparam(bInt)>=108)
+         bonus bMatk,60;
+      if (readparam(bDex)>=108)
+         bonus bLongAtkRate,5;
+         bonus bFixedCast,-500;
+      if (readparam(bLuk)>=108)
+         bonus bCritAtkRate,30;
+  - Id: 28595
+    AegisName: 28595
+    Name: 蒼龍之環
+    Type: Armor
+    Buy: 20
+    Weight: 200
+    Slots: 1
+    Locations:
+      Both_Accessory: true
+    Script: |
+      bonus bAllStats,1;
+      bonus bMdef,10;
+      if(BaseClass == Job_Swordman) {
+      bonus bMaxHPrate,7;
+      bonus2 bSkillAtk,"RK_SONICWAVE",50;
+      autobonus3 "{ bonus bAspd,2; }",1000,30000,"PA_SACRIFICE";
+      }
+      if(BaseClass == Job_Mage) {
+      bonus bMatkRate,5;
+      bonus5 bAutoSpellOnSkill,"WL_FROSTMISTY","MG_SAFETYWALL",5,1000,1;
+      bonus5 bAutoSpellOnSkill,"PF_FOGWALL","MG_SAFETYWALL",5,1000,1;
+      }
+      if(BaseClass == Job_Thief) {
+      bonus bFlee,10;
+      bonus2 bSkillCooldown,"GC_HALLUCINATIONWALK",-60000;
+      bonus2 bVariableCastrate,"SC_MANHOLE",-100;
+      }
+      if(BaseClass == Job_Acolyte) {
+      bonus bDelayrate,-5;
+      autobonus3 "{ bonus bMaxHPrate,25; bonus bDelayrate,-20; }",1000,30000,"AB_OFFERTORIUM";
+      autobonus3 "{ bonus bMaxHPrate,25; bonus bDelayrate,-20; }",1000,10000,"SR_RAISINGDRAGON";
+      }
+      if(BaseClass == Job_Archer) {
+      bonus bAspd,1;
+      autobonus3 "{ bonus bVariableCastrate,-100; }",1000,5000,"RA_WUGBITE";
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",getskilllv("WM_LESSON")*2; 
+      }
+      if(BaseClass == Job_Merchant) {
+      bonus2 bAddClass,Class_All,5;
+      bonus2 bSkillAtk,"GN_CART_TORNADO",20;
+      bonus5 bAutoSpellOnSkill,"NC_SELFDESTRUCTION","GN_CARTBOOST",5,1000,1;
+      }
+      if(BaseClass == Job_Novice) || (BaseClass == Job_Taekwon) || (Class == Job_KagerouOboro) || (Class == Job_Rebellion) {
+      bonus2 bAddClass,Class_All,10;
+      bonus bMatkRate,10;
+      }
+  - Id: 450175
+    AegisName: Aegis_450175
+    Name: 時光超越湧現鎧甲
+    Type: Armor
+    Buy: 20
+    Weight: 2000
+    Defense: 120
+    Classes:
+      All: true
+    Slots: 1
+    Locations:
+      Armor: true
+    Refineable: true
+    Script:
+      bonus bMdef,10;
+      bonus bAtk,30;
+      bonus bMatk,30;
+      .@r = getrefine();
+      bonus2 bAddClass,Class_All,2*(.@r/3);
+      bonus bMatkRate,2*(.@r/3);
+      if (.@r>=7) {
+         bonus bAtk,50;
+         bonus bMatk,50;
+      }
+      if (.@r>=9) {
+         bonus2 bIgnoreDefRaceRate,RC_Brute,30;
+         bonus2 bIgnoreDefRaceRate,RC_Demon,30;
+         bonus2 bIgnoreMdefRaceRate,RC_Brute,30;
+         bonus2 bIgnoreMdefRaceRate,RC_Demon,30;
+      }
+      if (.@r>=11) {
+         bonus2 bAddEle,Ele_All,10; 
+         bonus2 bMagicAddEle,Ele_All,10;
+      }
+  - Id: 480076
+    AegisName: Aegis_480076
+    Name: 時光超越者斗篷
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Defense: 40
+    Classes:
+      All: true
+    Slots: 1
+    Locations:
+      Garment: true
+    Refineable: true
+    EquipLevelMin: 100
+    Script:
+      bonus bMdef,10;
+      .@r = getrefine();
+      bonus2 bAddRace,RC_ALL,(.@r/2);
+      bonus bMatkRate,(.@r/2);
+      bonus bLongAtkRate,(.@r/2);
+      bonus bCritical,3*(.@r/2);
+      bonus bCritAtkRate,3*(.@r/2);
+      bonus2 bAddSize,Size_All,2*(.@r/4);
+      bonus2 bMagicAddEle,Ele_All,2*(.@r/4);
+      bonus bMaxHPrate,3*(.@r/4);
+      bonus bAspdRate,3*(.@r/4);
+      bonus bCritAtkRate,3*(.@r/4);
+      if (.@r>=9) {
+         bonus2 bAddRace,RC_ALL,7;
+         bonus bMatkRate,7;
+      }
+  - Id: 490030
+    AegisName: Aegis_490030
+    Name: 時光超越者之戒
+    Type: Armor
+    Buy: 20
+    Weight: 300
+    Defense: 0
+    Classes:
+      All: true
+    Slots: 1
+    Locations:
+      Both_Accessory: true
+    Refineable: false
+    EquipLevelMin: 100
+    Script:
+      bonus bAllStats,1;
+  - Id: 490097
+    AegisName: Ring_Of_Nature
+    Name: 時光超越者手鐲
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Defense: 0
+    Classes:
+      All: true
+    Slots: 1
+    Locations:
+      Left_Accessory: true
+    Refineable: false
+    EquipLevelMin: 100
+    Script:
+      bonus bAllStats,2;
+      bonus bMdef,5;
